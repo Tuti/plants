@@ -25,7 +25,7 @@ body {
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 header {
@@ -47,6 +47,9 @@ li {
 }
 
 .navbar {
+  position: fixed;
+  background-color: var(--main-bg-color);
+  width: 100%;
   min-height: 4rem;
   display: flex;
   justify-content: space-between;
@@ -63,6 +66,7 @@ li {
 
 .hamburger {
   display: block;
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -78,11 +82,76 @@ li {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: white;
-  background-color: #059d2a;
+  background-color: var(--main-bg-color);
+}
+
+.nav-link:hover {
+  color: yellow;
 }
 
 .nav-menu.active {
   left: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+section.welcome {
+  padding-top: 5rem;
+}
+.alternate {
+  background-color: var(--main-bg-color);
+  color: white;
+}
+
+.landing-page-img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  /* border: 1px black solid; */
+}
+
+footer {
+  padding: 1rem 0;
+  background-color: #191919;
+  color: white;
+}
+
+.footer-item {
+  padding-left: 1rem;
+}
+
+.footer-heading {
+  font-size: 1.5rem;
+  color: var(--main-bg-color);
+}
+
+.footer-text {
+  font-size: 1rem;
+}
+.footer-text:nth-child(2) {
+  padding-left: 1rem;
+}
+
+.map {
+  padding: 1rem 1rem 0 1rem;
+  max-width: 100%;
+  max-height: 14rem;
+  aspect-ratio: 2/1;
+}
+
+@media (min-width: 750px) {
+  section {
+    flex-direction: row;
+  }
+  .landing-page-img {
+    border: none;
+    max-height: 250px;
+  }
 }
 /* .navbar {
   min-height: 4rem;
@@ -156,50 +225,6 @@ li {
 /* gap: 3rem; */
 /* } */
 /* }  */
-
-section {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
-}
-
-.alternate {
-  background-color: var(--main-bg-color);
-  color: white;
-}
-
-.landing-page-img {
-  max-width: 100%;
-  max-height: 300px;
-  object-fit: contain;
-  border: 1px black solid;
-}
-
-footer {
-  padding: 1rem 0;
-  background-color: #191919;
-  color: white;
-}
-
-.footer-item {
-  padding-left: 1rem;
-}
-
-.footer-heading {
-  color: var(--main-bg-color);
-}
-
-.footer-text:nth-child(2) {
-  padding-left: 1rem;
-}
-
-.map {
-  padding: 1rem 1rem 0 1rem;
-  max-width: 100%;
-  max-height: 14rem;
-  aspect-ratio: 2/1;
-}
 
 /* @media (max-width: 768px) {
   .hamburger-button {
