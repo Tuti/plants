@@ -52,6 +52,7 @@ li {
 }
 
 .nav-branding {
+  color: white;
   font-size: 2rem;
 }
 
@@ -92,11 +93,12 @@ section {
   max-width: 100%;
   max-height: 300px;
   object-fit: contain;
+  border: 1px black solid;
 }
 
 footer {
-  padding: 2rem 0;
-  background-color: black;
+  padding: 1rem 0;
+  background-color: #191919;
   color: white;
 }
 
@@ -106,6 +108,13 @@ footer {
 
 .footer-text:nth-child(2) {
   padding-left: 1rem;
+}
+
+.map {
+  padding: 1rem 1rem 0 1rem;
+  max-width: 100%;
+  max-height: 14rem;
+  aspect-ratio: 2/1;
 }
 
 @media (max-width: 768px) {
