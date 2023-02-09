@@ -25,6 +25,7 @@ body {
     sans-serif;
   font-size: 1.25rem;
   line-height: 1.6;
+  height: 100vh;
 }
 
 header {
@@ -86,36 +87,30 @@ li {
   color: yellow;
 }
 
+.current {
+  border-radius: 5px;
+  border: 1px solid yellow;
+  padding: 0 0.25rem;
+}
+
 .nav-menu.active {
   left: 0;
 }
 
-.landing-page-img {
-  position: relative;
-  width: 100%;
-  max-height: 50vh;
-  object-fit: cover;
-  top: 1rem;
-  z-index: -1;
-  /* overflow-y: hidden; */
-}
-
-section {
+.photo-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  padding: 5rem 1rem 1rem 1rem;
   gap: 1rem;
 }
 
-.section-img {
-  object-fit: contain;
-  max-height: 250px;
-}
-.alternate {
-  background-color: var(--main-bg-color);
-  color: white;
+img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 300px;
+  aspect-ratio: 1/1;
+  border: 1px solid black;
 }
 
 footer {
@@ -157,105 +152,35 @@ footer {
 }
 
 @media (min-width: 600px) {
-  body {
-    line-height: 1.8;
-  }
-
-  .navbar {
-    padding: 0 5rem;
-  }
-  section {
-    padding: 1rem 2rem;
+  .photo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 20rem);
+    grid-template-rows: auto;
   }
 }
 
 @media (min-width: 750px) {
-  * {
-    line-height: 1.8;
+  .hamburger {
+    display: none;
   }
-
   .nav-branding {
-    display: flex;
-    justify-content: space-between;
+    flex-grow: 0;
+    flex-basis: auto;
   }
-
   .nav-menu {
     flex-basis: auto;
     position: relative;
     width: auto;
-    left: 0;
+    flex-direction: row;
     top: 0;
-    flex-direction: row;
-    -webkit-transition: none;
-    transition: none;
-  }
-
-  section {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .text-wrapper {
-    width: clamp(20rem, 60%, 50rem);
-  }
-
-  .section-img {
-    max-height: 300px;
-  }
-
-  .alternate {
-    /* flex-direction: row-reverse; */
-  }
-
-  .list {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .map {
-    max-width: 30rem;
-  }
-
-  .bar {
-    display: none;
+    left: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  body {
-    line-height: 2.2;
-  }
-  section {
-    padding: 8rem 4rem;
-    flex-direction: row;
-    gap: 4rem;
-  }
-  .alternate {
-    flex-direction: row-reverse;
-  }
-
-  .section-img {
-    max-height: 25rem;
-  }
-  .section-title {
-    font-size: 3rem;
-  }
-
-  .text-wrapper {
-    font-size: 1.5rem;
-    line-height: 2;
-    width: clamp(40rem, 60%, 50rem);
-  }
-
-  .footer-hours-contact-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  .list {
-    display: flex;
-    gap: 3rem;
-  }
-  footer {
-    padding: 4rem 0 1rem 0;
+  .photo-container {
+    grid-template-columns: repeat(3, 25rem);
+    align-items: center;
+    justify-content: center;
   }
 }
