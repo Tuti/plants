@@ -157,6 +157,10 @@ footer {
     grid-template-columns: repeat(2, 20rem);
     grid-template-rows: auto;
   }
+
+  .navbar {
+    padding: 0 5rem;
+  }
 }
 
 @media (min-width: 750px) {

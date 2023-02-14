@@ -109,18 +109,25 @@ main {
   justify-content: center;
   flex: 1 0 auto;
 }
+
 #contact-form {
   padding: 5rem 0 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 0.5rem;
+}
+
+#message-content {
+  width: 100%;
+  height: 100%;
+  max-height: 20rem;
 }
 
 input {
   width: 20rem;
   padding: 0.5rem;
 }
+
 /*** End of main Styling ***/
 
 /* Footer Styling */
@@ -170,6 +177,14 @@ footer {
     grid-template-columns: repeat(2, 20rem);
     grid-template-rows: auto;
   }
+
+  .navbar {
+    padding: 0 5rem;
+  }
+
+  input {
+    width: 30rem;
+  }
 }
 
 @media (min-width: 750px) {
@@ -195,6 +210,10 @@ footer {
 
   .map {
     max-width: 30rem;
+  }
+
+  input {
+    width: 40rem;
   }
 }
 
