@@ -1,6 +1,7 @@
 :root {
   --main-theme-color: #059d2a;
-  --main-bg-color: white;
+  --main-bg-color: #059d2a;
+  --main-text-color: white;
 }
 
 *,
@@ -41,7 +42,7 @@ li {
   width: 2rem;
   height: 0.25rem;
   margin: 0.5rem auto;
-  background-color: black;
+  background-color: white;
 }
 
 .navbar {
@@ -58,7 +59,7 @@ li {
 .nav-branding {
   text-align: center;
   flex: 1;
-  /* color: white; */
+  color: var(--main-text-color);
   font-size: 2rem;
 }
 
@@ -73,18 +74,58 @@ li {
   top: 4rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   padding: 0.5rem;
   gap: 1rem;
   text-align: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  /* color: white; */
+  color: var(--main-text-color);
   background-color: var(--main-bg-color);
 }
 
+/* 
+    Use display: inline-block to make the underline span just the width of the text content.
+    Use the ::after pseudo-element with width: 100% and position: absolute to place it below the content.
+    Use transform: scaleX(0) to initially hide the pseudo-element.
+    Use the :hover pseudo-class selector to apply transform: scaleX(1) and display the pseudo-element on hover.
+    Animate transform using transform-origin: left and an appropriate transition.
+    Remove the transform-origin property to make the transform originate from the center of the element.
+*/
+
+.nav-link {
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: yellow;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .nav-link:hover {
-  color: var(--main-theme-color);
+  color: yellow;
+}
+
+.current {
+  border-radius: 5px;
+  border: 2px solid white;
+  padding: 0.25rem;
 }
 
 .nav-menu.active {
@@ -113,9 +154,10 @@ section {
   object-fit: contain;
   max-height: 250px;
 }
+
 .alternate {
-  background-color: #ddefdb;
-  /* color: white; */
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
 }
 
 footer {
@@ -161,10 +203,6 @@ footer {
     line-height: 1.8;
   }
 
-  .navbar {
-    padding: 0 5rem;
-  }
-
   section {
     padding: 1rem 2rem;
   }
@@ -176,8 +214,9 @@ footer {
   }
 
   .navbar {
-    padding: 0 5rem;
+    padding: 0 2rem;
   }
+
   .nav-branding {
     display: flex;
     justify-content: space-between;
@@ -207,10 +246,6 @@ footer {
     max-height: 300px;
   }
 
-  .alternate {
-    /* flex-direction: row-reverse; */
-  }
-
   .list {
     display: flex;
     flex-direction: row;
@@ -229,11 +264,13 @@ footer {
   body {
     line-height: 2.2;
   }
+
   section {
     padding: 8rem 4rem;
     flex-direction: row;
     gap: 4rem;
   }
+
   .alternate {
     flex-direction: row-reverse;
   }
@@ -255,10 +292,12 @@ footer {
     display: flex;
     flex-direction: column;
   }
+
   .list {
     display: flex;
     gap: 3rem;
   }
+
   footer {
     padding: 4rem 0 1rem 0;
   }

@@ -76,6 +76,7 @@ header {
   top: 4rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   padding: 0.5rem;
   gap: 1rem;
@@ -86,14 +87,38 @@ header {
   background-color: var(--main-bg-color);
 }
 
+.nav-link {
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: yellow;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .nav-link:hover {
   color: yellow;
 }
 
 .current {
   border-radius: 5px;
-  border: 1px solid yellow;
-  padding: 0 0.25rem;
+  border: 2px solid white;
+  padding: 0.25rem;
 }
 
 .nav-menu.active {
@@ -178,10 +203,6 @@ footer {
     grid-template-rows: auto;
   }
 
-  .navbar {
-    padding: 0 5rem;
-  }
-
   input {
     width: 30rem;
   }
@@ -191,10 +212,15 @@ footer {
   .hamburger {
     display: none;
   }
+
+  .navbar {
+    padding: 0 2rem;
+  }
   .nav-branding {
     flex-grow: 0;
     flex-basis: auto;
   }
+
   .nav-menu {
     flex-basis: auto;
     position: relative;
@@ -203,6 +229,7 @@ footer {
     top: 0;
     left: 0;
   }
+
   .list {
     display: flex;
     flex-direction: row;
