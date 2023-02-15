@@ -32,18 +32,28 @@
     </header>
     <main>
       <form id="contact-form">
-        <label for="Name">Name: </label>
-        <input type="text" placeholder="name" />
-        <label for="Email">Email:</label>
-        <input type="text" placeholder="email" />
-        <label for="Subject">Subject:</label>
+        <div class="input-wrapper">
+          <label for="Name">Name: </label>
+          <input type="text" placeholder="name" />
+        </div>
+        <div class="input-wrapper">
+          <label for="Email">Email:</label>
+          <input type="text" placeholder="email" />
+        </div>
+        <div class="input-wrapper">
+          <label for="Subject">Subject:</label>
+          <input type="text" placeholder="subject" />
+        </div>
         <textarea
           name="message-content"
           id="message-content"
           cols="30"
           rows="10"
+          maxlength="300"
+          style="resize: none"
           placeholder="Type your message here"
         ></textarea>
+        <button id="form-submit">Submit</button>
       </form>
     </main>
     <footer>
@@ -77,3 +87,4 @@
     </footer>
   </body>
 </html>
+<script src="/script.js" defer></script>
