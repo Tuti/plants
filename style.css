@@ -1,5 +1,6 @@
 :root {
-  --main-bg-color: #059d2a;
+  --main-theme-color: #059d2a;
+  --main-bg-color: white;
 }
 
 *,
@@ -40,7 +41,7 @@ li {
   width: 2rem;
   height: 0.25rem;
   margin: 0.5rem auto;
-  background-color: white;
+  background-color: black;
 }
 
 .navbar {
@@ -57,7 +58,7 @@ li {
 .nav-branding {
   text-align: center;
   flex: 1;
-  color: white;
+  /* color: white; */
   font-size: 2rem;
 }
 
@@ -78,12 +79,12 @@ li {
   text-align: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  color: white;
+  /* color: white; */
   background-color: var(--main-bg-color);
 }
 
 .nav-link:hover {
-  color: yellow;
+  color: var(--main-theme-color);
 }
 
 .nav-menu.active {
@@ -97,7 +98,6 @@ li {
   object-fit: cover;
   top: 1rem;
   z-index: -1;
-  /* overflow-y: hidden; */
 }
 
 section {
@@ -114,8 +114,8 @@ section {
   max-height: 250px;
 }
 .alternate {
-  background-color: var(--main-bg-color);
-  color: white;
+  background-color: #ddefdb;
+  /* color: white; */
 }
 
 footer {
@@ -132,7 +132,7 @@ footer {
 
 .footer-heading {
   font-size: 1.5rem;
-  color: var(--main-bg-color);
+  color: var(--main-theme-color);
 }
 
 .footer-text {
@@ -175,6 +175,9 @@ footer {
     line-height: 1.8;
   }
 
+  .navbar {
+    padding: 0 5rem;
+  }
   .nav-branding {
     display: flex;
     justify-content: space-between;

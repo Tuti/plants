@@ -1,7 +1,7 @@
 :root {
-  --main-bg-color: #059d2a;
+  --main-theme-color: #059d2a;
+  --main-bg-color: white;
 }
-
 *,
 *::before,
 *::after {
@@ -58,7 +58,6 @@ header {
 .nav-branding {
   text-align: center;
   flex: 1;
-  color: white;
   font-size: 2rem;
 }
 
@@ -79,17 +78,16 @@ header {
   text-align: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  color: white;
   background-color: var(--main-bg-color);
 }
 
 .nav-link:hover {
-  color: yellow;
+  color: var(--main-theme-color);
 }
 
 .current {
-  border-radius: 5px;
-  border: 1px solid yellow;
+  border-radius: 10px;
+  border: 2px solid var(--main-theme-color);
   padding: 0 0.25rem;
 }
 
@@ -127,7 +125,7 @@ footer {
 
 .footer-heading {
   font-size: 1.5rem;
-  color: var(--main-bg-color);
+  color: var(--main-theme-color);
 }
 
 .footer-text {
